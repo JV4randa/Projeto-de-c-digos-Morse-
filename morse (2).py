@@ -13,7 +13,7 @@ codigos = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
            'Y': '-.--', 'Z': '--..',
            '0': '-----', '1': '.----', '2': '..---', '3': '...--',
            '4': '....-', '5': '.....', '6': '-....', '7': '--...',
-           '8': '---..', '9': '----.', ' ': '. '  # Espaço tratado de forma especial
+           '8': '---..', '9': '----.', ' ': '/'  # Espaço tratado de forma especial
           }
 
 # INVERSÃO DO CÓDIGO: cria um novo dicionário com os valores e chaves trocados, para decodificação
@@ -42,6 +42,13 @@ def work():
         except:
             # Se algum caractere não estiver no dicionário, ocorre erro
             print("Erro traduzir!")
+        #Opção para executar novamente.
+        opcao = input("Desejas continuar?   S/N  \n").upper()
+        if opcao == "S":
+            # Chama a função novamente
+            work()
+        else:
+            print("Terminando...")
 
     elif(escolha == 2):
         # Opção 2: código Morse para texto
@@ -55,6 +62,13 @@ def work():
             print("mensagem saida em código morse: \n" + texto)
         except:
             print("Erro ao traduzir")
+        #Opção para executar novamente.
+        opcao = input("Desejas continuar?   S/N  \n").upper()
+        if opcao == "S":
+            # Chama a função novamente
+            work()
+        else:
+            print("Terminando...")
         
     elif (escolha == 3):
         # Opção 3: código Morse em som
@@ -67,7 +81,7 @@ def work():
                 winsound.Beep(1000, 300)
                 time.sleep(0.3)
             elif c == "-":
-                # Toca um bip longo para traço
+                # Toca um bip longo para traçoF
                 winsound.Beep(1000, 800)
                 time.sleep(0.3)
             elif c == "/" or c == " ":
@@ -76,6 +90,13 @@ def work():
             else:
                 # Caso encontre símbolo inválido
                 print("Caractere inválido detectado!")
+        #Opção para executar novamente.
+        opcao = input("Desejas continuar?   S/N  \n").upper()
+        if opcao == "S":
+            # Chama a função novamente
+            work()
+        else:
+            print("Terminando...")
 
     else:
         # Se a opção inserida não for válida
